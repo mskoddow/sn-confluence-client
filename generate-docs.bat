@@ -1,0 +1,1 @@
+jsdoc "src\Server Development\Script Includes\ConfluenceClient.script.js" -R "README.md" -d "./docs/"
