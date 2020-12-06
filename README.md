@@ -63,10 +63,10 @@ while (arrMatches = strHrefPattern.exec(objPage.getBody())) {
 
 ## Usage
 
-The attached UpdateSet consists of only one Script Include, which is bound to the global application "Confluence Client". If you want to have the Script Include in the "Global" scope you can move it there (see [ServiceNow Documentation](https://docs.servicenow.com/bundle/paris-application-development/page/build/applications/task/t_MoveAppFilesBetweenGlobalApps.html) on how to do that).
+On [ServiceNow Share](https://developer.servicenow.com/connect.do#!/share/contents/4067296_confluence_client) you can find an UpdateSet that consists of one Script Include, which is bound to the global application "Confluence Client". If you want to have the Script Include in the "Global" scope you can move it there (see [ServiceNow Documentation](https://docs.servicenow.com/bundle/paris-application-development/page/build/applications/task/t_MoveAppFilesBetweenGlobalApps.html) on how to do that).
 <br/>
 
-On GitHub you can find [the underlying repository](https://github.com/mskoddow/sn-confluence-client) which is prepared to be used in Visual Source Code together with the [ServiceNow extension for it](https://docs.servicenow.com/bundle/paris-application-development/page/build/applications/concept/vs-code.html).
+This repository though is prepared to be used in Visual Source Code together with the [ServiceNow extension for it](https://docs.servicenow.com/bundle/paris-application-development/page/build/applications/concept/vs-code.html).
 <br/>
 
 When creating a new ConfluenceClient object you just have to specify the URL to your Confluence instance:
