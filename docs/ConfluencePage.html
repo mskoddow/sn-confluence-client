@@ -1,0 +1,5894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ConfluencePage - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="ConfluenceClient.html">ConfluenceClient</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluenceClient.html#.isValidInteger">isValidInteger</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluenceClient.html#.isValidLabelName">isValidLabelName</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluenceClient.html#.isValidSpaceKey">isValidSpaceKey</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluenceClient.html#.isValidURL">isValidURL</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluenceClient.html#addPageLabels">addPageLabels</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluenceClient.html#createPage">createPage</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluenceClient.html#enableDebugMessages">enableDebugMessages</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluenceClient.html#getLastErrorMessage">getLastErrorMessage</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluenceClient.html#getRestMessageObject">getRestMessageObject</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluenceClient.html#loadPageChildren">loadPageChildren</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluenceClient.html#loadPageDataById">loadPageDataById</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluenceClient.html#loadPageDataByTitle">loadPageDataByTitle</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluenceClient.html#loadPageDescendants">loadPageDescendants</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluenceClient.html#loadScaffoldingData">loadScaffoldingData</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluenceClient.html#removePage">removePage</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluenceClient.html#removePageLabel">removePageLabel</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluenceClient.html#searchPages">searchPages</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluenceClient.html#updatePageData">updatePageData</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluenceClient.html#updatePageLabels">updatePageLabels</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluenceClient.html#updateScaffoldingData">updateScaffoldingData</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="ConfluencePage.html">ConfluencePage</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#addLabel">addLabel</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#create">create</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#getAncestors">getAncestors</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#getBody">getBody</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#getGroupReadingRestrictions">getGroupReadingRestrictions</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#getGroupUpdatingRestrictions">getGroupUpdatingRestrictions</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#getId">getId</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#getLabels">getLabels</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#getModificationDateTime">getModificationDateTime</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#getModifierDisplayName">getModifierDisplayName</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#getModifierUserName">getModifierUserName</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#getParentPageId">getParentPageId</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#getRenderedHTML">getRenderedHTML</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#getScaffoldingData">getScaffoldingData</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#getScaffoldingValue">getScaffoldingValue</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#getSpaceKey">getSpaceKey</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#getStatus">getStatus</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#getTitle">getTitle</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#getUserReadingRestrictions">getUserReadingRestrictions</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#getUserUpdatingRestrictions">getUserUpdatingRestrictions</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#getVersionNumber">getVersionNumber</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#hasLabel">hasLabel</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#increaseVersionNumber">increaseVersionNumber</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#isValid">isValid</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#loadScaffoldingData">loadScaffoldingData</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#remove">remove</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#removeLabel">removeLabel</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#setBody">setBody</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#setId">setId</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#setParentPageId">setParentPageId</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#setScaffoldingData">setScaffoldingData</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#setScaffoldingValue">setScaffoldingValue</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#setSpaceKey">setSpaceKey</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#setStatus">setStatus</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#setTitle">setTitle</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#setVersionNumber">setVersionNumber</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#stringify">stringify</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#update">update</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#updatePageData">updatePageData</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#updatePageLabels">updatePageLabels</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="ConfluencePage.html#updateScaffoldingData">updateScaffoldingData</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">ConfluencePage</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+        ConfluencePage
+        </h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="ConfluencePage"><span class="type-signature"></span>new ConfluencePage<span class="signature">(refConfluenceClient, jsonPage<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>This object represents a single Confluence Page and encapsulates all data and methods for dealing with it.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line960">line 960</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>refConfluenceClient</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code><a href="ConfluenceClient.html">ConfluenceClient</a></code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <p>Reference to an <a href="ConfluenceClient.html"><code>ConfluenceClient</code></a> object.</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>jsonPage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <p>Response of a REST API call.</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-throws">
+<h5>Throws:</h5>
+<ul>
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        <p>If passed parameter <code>refConfluenceClient</code> does not points to a valid object of type <a href="ConfluenceClient.html"><code>ConfluenceClient</code></a></p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><code>Error</code></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        <p>If passed parameter <code>jsonPage</code> does not represent a valid JSON object.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><code>Error</code></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    </ul>
+</div>
+
+
+
+
+
+</div>
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="addLabel"><span class="type-signature"></span>addLabel<span class="signature">(strLabelName)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Adds a single label to the internal list of page labels.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1458">line 1458</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>strLabelName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>String</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>Name of label to add.</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-throws">
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        <p>If passed parameter <code>strLabelName</code> does not represent a valid label name.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><code>Error</code></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+</div>
+
+
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="create"><span class="type-signature"></span>create<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Creates a new Confluence page by invoking method <a href="ConfluenceClient.html#createPage"><code>ConfluenceClient#createPage</code></a>.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1587">line 1587</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+
+<div class="param-desc">
+    <p><code>true</code> if operation was successful otherwise <code>false</code>.</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="getAncestors"><span class="type-signature"></span>getAncestors<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;<a href="ConfluencePage.html">ConfluencePage</a>>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Getter for the list of ancestors.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1356">line 1356</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Array.&lt;<a href="ConfluencePage.html">ConfluencePage</a>></code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>List of ancestors - wrapped by <a href="ConfluencePage.html"><code>ConfluencePage</code></a> objects - if defined or <code>undefined</code> if not.</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="getBody"><span class="type-signature"></span>getBody<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Getter for the content of a Confluence page.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1225">line 1225</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>String</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>Page content as storage format if defined or <code>undefined</code> if not.</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="getGroupReadingRestrictions"><span class="type-signature"></span>getGroupReadingRestrictions<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;Object>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Getter for the list of all group based reading restrictions.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1539">line 1539</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Array.&lt;Object></code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>List of objects for all groups that are allowed to read this Confluence page.</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="getGroupUpdatingRestrictions"><span class="type-signature"></span>getGroupUpdatingRestrictions<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;Object>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Getter for the list of all group based updating restrictions.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1548">line 1548</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Array.&lt;Object></code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>List of objects for all groups that are allowed to update this Confluence page.</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="getId"><span class="type-signature"></span>getId<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Getter for the Confluence page ID.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1076">line 1076</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>String</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>ID of the Confluence page if available or <code>undefined</code> if not.</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="getLabels"><span class="type-signature"></span>getLabels<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;Object>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Getter for the list of page labels.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1419">line 1419</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Array.&lt;Object></code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>List of page labels if defined or <code>undefined</code> if not.</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="getModificationDateTime"><span class="type-signature"></span>getModificationDateTime<span class="signature">()</span><span class="type-signature"> &rarr; {GlideDateTime}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Getter for the modification date and time of a Confluence page.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1392">line 1392</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>GlideDateTime</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>An instance of a <a href="https://developer.servicenow.com/dev.do#!/reference/api/orlando/server/c_APIRef">GlideDateTime</a> object if defined or <code>undefined</code>if not.</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="getModifierDisplayName"><span class="type-signature"></span>getModifierDisplayName<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Getter for the display name of the last modifier of a Confluence page.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1410">line 1410</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>String</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>Full name of the last modifier if available or <code>undefined</code>if not.</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="getModifierUserName"><span class="type-signature"></span>getModifierUserName<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Getter for the user name of the last modifier of a Confluence page.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1401">line 1401</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>String</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>User name of the last modifier if available or <code>undefined</code>if not.</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="getParentPageId"><span class="type-signature"></span>getParentPageId<span class="signature">()</span><span class="type-signature"> &rarr; {Integer}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Getter for the parent page ID.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1383">line 1383</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Integer</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>Id of the parent page if defined or <code>undefined</code> if not.</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="getRenderedHTML"><span class="type-signature"></span>getRenderedHTML<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Getter for HTML of the rendered Confluence Page.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1234">line 1234</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>String</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>Rendered HTML of that Confluence page if defined or <code>undefined</code>if not.</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="getScaffoldingData"><span class="type-signature"></span>getScaffoldingData<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;Object>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Getter for the Scaffolding data.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1268">line 1268</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Array.&lt;Object></code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>Array with all Scaffolding data if defined or <code>undefined</code>if not.</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="getScaffoldingValue"><span class="type-signature"></span>getScaffoldingValue<span class="signature">(strFieldName)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Getter for a single scaffolding field value.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1296">line 1296</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>strFieldName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>String</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>Name of the scaffolding field whoose value should be returned.</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-throws">
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        <p>If passed parameter <code>strFieldName</code> is not a valid <code>String</code> value.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><code>Error</code></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+</div>
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Object</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>Value of requested scaffolding field if defined or <code>undefined</code> if not.</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="getSpaceKey"><span class="type-signature"></span>getSpaceKey<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Getter for the space key the Confluence page is located in.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1134">line 1134</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>String</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>Space key or <code>undefined</code> if no space key is stored.</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="getStatus"><span class="type-signature"></span>getStatus<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Getter for the Confluence page status.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1050">line 1050</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>String</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>Status of the Confluence page if available or <code>undefined</code> if not.</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="getTitle"><span class="type-signature"></span>getTitle<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Getter for the Confluence page title.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1107">line 1107</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>String</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>Title of the Confluence page if available or <code>undefined</code> if not.</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="getUserReadingRestrictions"><span class="type-signature"></span>getUserReadingRestrictions<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;Object>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Getter for the list of all user based reading restrictions.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1521">line 1521</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Array.&lt;Object></code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>List of objects for all users that are allowed to read this Confluence page.</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="getUserUpdatingRestrictions"><span class="type-signature"></span>getUserUpdatingRestrictions<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;Object>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Getter for the list of all user based updating restrictions.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1530">line 1530</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Array.&lt;Object></code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>List of objects for all users that are allowed to update this Confluence page.</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="getVersionNumber"><span class="type-signature"></span>getVersionNumber<span class="signature">()</span><span class="type-signature"> &rarr; {Integer}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Getter for the version number of the Confluence page.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1161">line 1161</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Integer</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>Version number if defined or <code>undefined</code> if not</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="hasLabel"><span class="type-signature"></span>hasLabel<span class="signature">(strLabelName)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Tests whether this <a href="ConfluencePage.html"><code>ConfluencePage</code></a> object has a label named by given <code>strLabelName</code>.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1430">line 1430</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>strLabelName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>String</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>Label name to test.</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-throws">
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        <p>If passed parameter <code>strLabelName</code> does not represent a valid label name.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><code>Error</code></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+</div>
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Boolean</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p><code>True</code> if label with given name exists or <code>false</code>if not.</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="increaseVersionNumber"><span class="type-signature"></span>increaseVersionNumber<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Increases the page version by adding +1.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1193">line 1193</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="isValid"><span class="type-signature"></span>isValid<span class="signature">()</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Tests whether this object is a valid initialized <a href="ConfluencePage.html"><code>ConfluencePage</code></a> object.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1649">line 1649</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Boolean</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p><code>True</code> in case this object is a valid <a href="ConfluencePage.html"><code>ConfluencePage</code></a> object.</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="loadScaffoldingData"><span class="type-signature"></span>loadScaffoldingData<span class="signature">(strAllowedFields<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Loads the Scaffolding data by invoking <a href="ConfluenceClient.html#loadScaffoldingData"><code>ConfluenceClient#loadScaffoldingData</code></a>.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1245">line 1245</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>strAllowedFields</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Array.&lt;String></code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <p>Optional list of field names that should remain at result array.</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-throws">
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        <p>If underlying page object has no page ID stored.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><code>Error</code></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+</div>
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Boolean</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p><code>true</code> if loading of Scaffolding data was successful otherwise <code>false</code>.</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="remove"><span class="type-signature"></span>remove<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Deletes a Confluence page by invoking method <a href="ConfluenceClient.html#removePage"><code>ConfluenceClient#removePage</code></a>.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1605">line 1605</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+
+<div class="param-desc">
+    <p><code>true</code> if operation was successful otherwise <code>false</code>.</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="removeLabel"><span class="type-signature"></span>removeLabel<span class="signature">(strLabelName)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Removes a label with given name from the internal list of page labels.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1491">line 1491</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>strLabelName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>String</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>Name of the label to be removed.</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-throws">
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        <p>If passed parameter <code>strLabelName</code> does not represent a valid label name.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><code>Error</code></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+</div>
+
+
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="setBody"><span class="type-signature"></span>setBody<span class="signature">(strPageBody)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Setter for the content of a Confluence page.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1209">line 1209</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>strPageBody</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>String</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>Page content as storage format.</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-throws">
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        <p>If passed parameter <code>strPageBody</code> is not of type <code>String</code>.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><code>Error</code></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+</div>
+
+
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="setId"><span class="type-signature"></span>setId<span class="signature">(strPageId)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Setter for the Confluence page ID.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1087">line 1087</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>strPageId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Integer</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>A valid Confluence page ID.</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-throws">
+<h5>Throws:</h5>
+<ul>
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        <p>If passed parameter <code>strPageId</code> is not a valid Confluence page ID.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><code>Error</code></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        <p>If once set page ID should be changed.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><code>Error</code></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    </ul>
+</div>
+
+
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="setParentPageId"><span class="type-signature"></span>setParentPageId<span class="signature">(strParentPageId)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Setter for the parent page ID.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1366">line 1366</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>strParentPageId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Integer</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>Id of the new parent page.</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-throws">
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        <p>If passed parameter <code>strParentPageId</code> is not a valid <code>Integer</code> value.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><code>Error</code></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+</div>
+
+
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="setScaffoldingData"><span class="type-signature"></span>setScaffoldingData<span class="signature">(arrScaffoldingData)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Setter for the Scaffolding data.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1278">line 1278</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>arrScaffoldingData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Array.&lt;Object></code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>Array with the scaffolding data</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-throws">
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        <p>If passed parameter <code>arrScaffoldingData</code> is not of type <code>Array</code>.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><code>Error</code></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+</div>
+
+
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="setScaffoldingValue"><span class="type-signature"></span>setScaffoldingValue<span class="signature">(strFieldName, objFieldValue)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Setter for a single scaffolding field value.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1322">line 1322</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>strFieldName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>String</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>Name of the scaffolding field whoose value should be set.</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>objFieldValue</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>*</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>New value for the specified scaffolding field.</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-throws">
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        <p>If passed parameter <code>strFieldName</code> is not a valid <code>String</code> value.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><code>Error</code></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+</div>
+
+
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="setSpaceKey"><span class="type-signature"></span>setSpaceKey<span class="signature">(strSpaceKey)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Setter for the (new) space key the Confluence page should be located in.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1144">line 1144</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>strSpaceKey</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>String</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>Key of the (new) space.</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-throws">
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        <p>If passed parameter <code>strSpaceKey</code> is not a valid Confluence space key.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><code>Error</code></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+</div>
+
+
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="setStatus"><span class="type-signature"></span>setStatus<span class="signature">(strStatus)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Setter for the Confluence page status.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1060">line 1060</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>strStatus</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>String</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>Status of the Confluence page. Only allowed values are <code>current</code> and <code>trashed</code>.</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-throws">
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        <p>If passed parameter <code>strStatus</code> is not a String or different from the allowed values.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><code>Error</code></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+</div>
+
+
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="setTitle"><span class="type-signature"></span>setTitle<span class="signature">(strPageTitle)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Setter for the Confluence page title.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1117">line 1117</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>strPageTitle</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>String</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>The new title of the Confluence page.</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-throws">
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        <p>If passed parameter <code>strPageTitle</code> is empty or not of type <code>String</code>.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><code>Error</code></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+</div>
+
+
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="setVersionNumber"><span class="type-signature"></span>setVersionNumber<span class="signature">(intVersionNumber)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Setter for the version number of a Confluence page.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1171">line 1171</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>intVersionNumber</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Integer</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>Version number of the current page version.</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-throws">
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        <p>If passed parameter <code>intVersionNumber</code> is not a valid <code>Integer</code> value.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type"><code>Error</code></span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+</div>
+
+
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="stringify"><span class="type-signature"></span>stringify<span class="signature">(createNewPage, suppressNotifications<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Returns a JSON based representation of this page object that can be used as payload for REST api requests.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1616">line 1616</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>createNewPage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Boolean</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <p>If <code>true</code> only fields will be returned that are necessary for creating new pages.</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>suppressNotifications</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Boolean</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <p>If <code>true</code> no email notifications will be sent to watchers.</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>String</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>String in JSON format</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="update"><span class="type-signature"></span>update<span class="signature">(suppressNotifications<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Updates complete page data on the Confluence server by invoking appropriate update methods.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1596">line 1596</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>suppressNotifications</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Boolean</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <p>If <code>true</code> no email notifications will be sent to watchers.</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Boolean</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p><code>true</code> if operation was successful otherwise <code>false</code>.</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="updatePageData"><span class="type-signature"></span>updatePageData<span class="signature">(suppressNotifications<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Updates page data on the Confluence server by invoking method <a href="ConfluenceClient.html#updatePageData"><code>ConfluenceClient#updatePageData</code></a>.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1558">line 1558</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>suppressNotifications</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Boolean</code></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <p>If <code>true</code> no email notifications will be sent to watchers.</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Boolean</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p><code>true</code> if operation was successful otherwise <code>false</code>.</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="updatePageLabels"><span class="type-signature"></span>updatePageLabels<span class="signature">()</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Updates page labels on the Confluence server by invoking method <a href="ConfluenceClient.html#updatePageLabels"><code>ConfluenceClient#updatePageLabels</code></a>.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1569">line 1569</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Boolean</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p><code>true</code> if operation was successful otherwise <code>false</code>.</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="updateScaffoldingData"><span class="type-signature"></span>updateScaffoldingData<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Updates scaffolding data on the Confluence server by invoking method <a href="ConfluenceClient.html#updateScaffoldingData"><code>ConfluenceClient#updateScaffoldingData</code></a>.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ConfluenceClient.script.js.html">ConfluenceClient.script.js</a>, <a href="ConfluenceClient.script.js.html#line1578">line 1578</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+
+<div class="param-desc">
+    <p><code>true</code> if operation was successful otherwise <code>false</code>.</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> on Tue Dec 29 2020 04:16:35 GMT+0100 (GMT+01:00) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
