@@ -33,7 +33,8 @@ ConfluenceClient.prototype = {
     initialize: function(strConfluenceURL) {		
 		if (!ConfluenceClient.isValidURL(strConfluenceURL)) {
 			throw new Error(
-				"[ConfluenceClient.initialize] Please pass a valid Confluence URL at parameter {strConfluenceURL}!"
+				"[ConfluenceClient.initialize] Please pass a valid Confluence URL at parameter {strConfluenceURL}!" +
+				" Invalid value: " + strConfluenceURL
 			);
 		}
 		
@@ -93,12 +94,12 @@ ConfluenceClient.prototype = {
 	 * @param {String} strCQL CQL based query 
 	 * @param {Boolean} [includeContent] If set to `true` page body contents will be included.
 	 * @returns {null|Array<ConfluencePage>} `NULL` if Confluence request has failed or an Array with objects of type {@link ConfluencePage} representing the corresponding Confluence pages.
-	 * @throws {Error} If parameter `strCQL` does not represent a value of type `String` or if it is empty.
+	 * @throws {Error} If passed parameter `strCQL` does not represent a value of type `String` or if it is empty.
 	 */
 	searchPages: function(strCQL, includeContent) {
 		if (!(typeof strCQL == "string" && strCQL.trim().length > 5)) {
 			throw new Error(
-				"[ConfluenceClient.searchPages] Please pass a valid CQL string at parameter {strCQL}!"
+				"[ConfluenceClient.searchPages] Please pass a valid CQL string at parameter {strCQL}! Invalid value: " + strCQL
 			);
 			
 		}
@@ -165,13 +166,14 @@ ConfluenceClient.prototype = {
 	 * 
 	 * @param {String} strParentId ID of the Confluence page whose children are to be loaded.
 	 * @param {Boolean} [includeContent] If set to `true` also the page content will be loaded.
-	 * @throws {Error} If parameter `strParentId` does not contain a valid Integer value.
+	 * @throws {Error} If passed parameter `strParentId` does not contain a valid Integer value.
 	 * @returns {null|Array<ConfluencePage>} `null` if Confluence request has failed or an Array with objects of type {@link ConfluencePage} representing the corresponding Confluence pages.
 	 */
 	loadPageChildren: function(strParentId, includeContent) {
 		if (!ConfluenceClient.isValidInteger(strParentId)) {
 			throw new Error(
-				"[ConfluenceClient.loadPageChildren] Please pass a valid Confluence page ID at parameter {strParentId}!"
+				"[ConfluenceClient.loadPageChildren] Please pass a valid Confluence page ID at parameter {strParentId}!" +
+				" Invalid value: " + strParentId
 			);
 		}
 		
@@ -228,13 +230,14 @@ ConfluenceClient.prototype = {
 	 * 
 	 * @param {String} strParentId ID of the Confluence page whose descendants are to be loaded.
 	 * @param {Boolean} [includeContent] If set to `true` also the page content will be loaded.
-	 * @throws {Error} If parameter `strParentId` does not contain a valid Integer value.
+	 * @throws {Error} If passed parameter `strParentId` does not contain a valid Integer value.
 	 * @returns {null|Array<ConfluencePage>} `NULL` if Confluence request has failed or an Array with objects of type {@link ConfluencePage} representing the corresponding Confluence pages.
 	 */
 	loadPageDescendants: function(strParentId, includeContent) {
 		if (!ConfluenceClient.isValidInteger(strParentId)) {
 			throw new Error(
-				"[ConfluenceClient.loadPageDescendants] Please pass a valid Confluence page ID at parameter {strParentId}!"
+				"[ConfluenceClient.loadPageDescendants] Please pass a valid Confluence page ID at parameter {strParentId}!" +
+				" Invalid value: " + strParentId
 			);
 		}
 		
@@ -245,21 +248,22 @@ ConfluenceClient.prototype = {
 	/**
 	 * Sends a GET request to the [Confluence REST API]{@link https://docs.atlassian.com/ConfluenceServer/rest/latest/#api/content-getContentById} for retrieving page data inclusive body content. 
 	 * 
-	 * @param {String} intId ID of the Confluence page to be loaded.
-	 * @throws {Error} If parameter `intId` does not contain a valid Integer value.
+	 * @param {String} strPageId ID of the Confluence page to be loaded.
+	 * @throws {Error} If passed parameter `strPageId` does not contain a valid Integer value.
 	 * @returns {null|ConfluencePage} `null` if Confluence request has failed or an {@link ConfluencePage} object representing the corresponding Confluence page data.
 	 */
-	loadPageDataById: function(intId) {
-		if (!ConfluenceClient.isValidInteger(intId)) {
+	loadPageDataById: function(strPageId) {
+		if (!ConfluenceClient.isValidInteger(strPageId)) {
 			throw new Error(
-				"[ConfluenceClient.loadPageDataById] Please pass a valid Confluence page ID at parameter {intId}!"
+				"[ConfluenceClient.loadPageDataById] Please pass a valid Confluence page ID at parameter {strPageId}!" +
+				" Invalid value: " + strPageId
 			);
 		}
 		
 		try {
 			//configure request
 			this._setHttpMethod("get");
-			this._setEndpoint("/rest/api/content/" + intId + "?expand=" + this._getCommonExpansions(true));
+			this._setEndpoint("/rest/api/content/" + strPageId + "?expand=" + this._getCommonExpansions(true));
 			
 			//send request
 			var objResponse = this._executeRequest("ConfluenceClient.loadPageDataById");
@@ -281,20 +285,22 @@ ConfluenceClient.prototype = {
 	 * 
 	 * @param {String} strSpaceKey Key of the Confluence space the requested Confluence page resides in.
 	 * @param {String} strPageTitle Title of the Confluence page to be loaded.
-	 * @throws {Error} If parameter `strSpaceKey` does not contain a valid space key.
-	 * @throws {Error} If parameter `strPageTitle` does not contain a valid page title.
+	 * @throws {Error} If passed parameter `strSpaceKey` does not contain a valid space key.
+	 * @throws {Error} If passed parameter `strPageTitle` does not contain a valid page title.
 	 * @returns {null|ConfluencePage} `NULL` if Confluence request has failed or an {@link ConfluencePage} object representing the corresponding Confluence page data.
 	 */
 	loadPageDataByTitle: function(strSpaceKey, strPageTitle) {
 		if (!ConfluenceClient.isValidSpaceKey(strSpaceKey)) {
 			throw new Error(
-				"[ConfluenceClient.loadPageDataByTitle] Please pass a valid Confluence page ID at parameter {intId}!"
+				"[ConfluenceClient.loadPageDataByTitle] Please pass a valid Confluence space key at parameter {strSpaceKey}!" +
+				" Invalid value: " + strSpaceKey
 			);
 		}
 		
 		if (!(typeof strPageTitle === "string" && strPageTitle.length > 0)) {
 			throw new Error(
-				"[ConfluenceClient.loadPageDataByTitle] Please pass a valid Confluence page title at parameter {strPageTitle}!"
+				"[ConfluenceClient.loadPageDataByTitle] Please pass a valid Confluence page title at parameter {strPageTitle}!" +
+				" Invalid value: " + strPageTitle
 			);
 		}
 
@@ -330,21 +336,22 @@ ConfluenceClient.prototype = {
 	/**
 	 * Sends a GET request to the [Scaffolding REST API]{@link https://docs.servicerocket.com/scaffolding/developer-guide/scaffolding-rest-api} for retrieving all form data.
 	 * 
-	 * @param {String} intId ID of the Confluence page whoose Scaffolding data should be loaded.
+	 * @param {String} strPageId ID of the Confluence page whoose Scaffolding data should be loaded.
 	 * @param {String} strAllowedFields List of all fields that should be loaded into the returned page object. If not specified or empty all available fields will be returned.
-	 * @throws {Error} If parameter `param` does not contain a valid Integer value.
+	 * @throws {Error} If passed parameter `strPageId` does not contain a valid Integer value.
 	 * @returns {null|Object} `NULL` if requesting the Scaffolding data has failed or an JSON object representing the corresponding Scaffolding data.
 	 */
-	loadScaffoldingData: function(intId, strAllowedFields) {
-		if (!ConfluenceClient.isValidInteger(intId)) {
+	loadScaffoldingData: function(strPageId, strAllowedFields) {
+		if (!ConfluenceClient.isValidInteger(strPageId)) {
 			throw new Error(
-				"[ConfluenceClient.loadScaffoldingData] Please pass a valid Confluence page ID at parameter {intId}!"
+				"[ConfluenceClient.loadScaffoldingData] Please pass a valid Confluence page ID at parameter {strPageId}!" +
+				" Invalid value: " + strPageId
 			);
 		}
 		
 		try {
 			//configure request
-			this._setEndpoint("/rest/scaffolding/1.0/api/form/" + intId);
+			this._setEndpoint("/rest/scaffolding/1.0/api/form/" + strPageId);
 			this._setHttpMethod("get");
 			
 			//send request
@@ -378,8 +385,8 @@ ConfluenceClient.prototype = {
 	 * 
 	 * @param {ConfluencePage} objPage A valid {@link ConfluencePage} object.
 	 * @param {Boolean} [suppressNotifications] If `true` no email notifications will be sent to watchers.
-	 * @throws {Error} If parameter `objPage` does not represent a valid {@link ConfluencePage}.
-	 * @throws {Error} If `objPage` does not hold the minimum field values for updating a Confluence page.
+	 * @throws {Error} If passed parameter `objPage` does not represent a valid {@link ConfluencePage}.
+	 * @throws {Error} If passed parameter `objPage` does not hold the minimum field values for updating a Confluence page.
 	 * @returns {Boolean} `true` if operation was successful otherwise `false`.
 	 */
 	updatePageData: function(objPage, suppressNotifications) {
@@ -427,8 +434,9 @@ ConfluenceClient.prototype = {
 	/**
 	 * Sends a PUT request to the [Scaffolding REST API]{@link https://docs.servicerocket.com/scaffolding/developer-guide/scaffolding-rest-api} for writing back scaffolding data to Confluence.
 	 * 
-	 * @throws {Error} If parameter `objPage` does not represent a valid {@link ConfluencePage}.
-	 * @throws {Error} If `objPage` does not have any Scaffolding data. Use {@link ConfluenceClient#loadScaffoldingData} first!
+	 * @throws {Error} If passed parameter `objPage` does not represent a valid {@link ConfluencePage}.
+	 * @throws {Error} If passed parameter `objPage` does not have a page ID stored.
+	 * @throws {Error} If passed parameter `objPage` does not have any Scaffolding data. Use {@link ConfluenceClient#loadScaffoldingData} first!
 	 * @param {ConfluencePage} objPage a valid {@link ConfluencePage}
 	 * @returns {Boolean} `true` if operation was successful otherwise `false`.
 	 */
@@ -439,9 +447,16 @@ ConfluenceClient.prototype = {
 			);			
 		}
 		
+		if (!objPage.getId()) {
+			throw new Error(
+				"[ConfluenceClient.updateScaffoldingData] {objPage} has no page ID stored!"
+			);			
+		}
+
 		if (!objPage.getScaffoldingData()) {
 			throw new Error(
-				"[ConfluenceClient.updateScaffoldingData] {objPage} has no scaffolding values for updating! Please use method 'loadScaffoldingData' first!"
+				"[ConfluenceClient.updateScaffoldingData] {objPage} has no Scaffolding data for updating! " +
+				"Please use method 'loadScaffoldingData' first!"
 			);			
 		}
 		
@@ -478,8 +493,8 @@ ConfluenceClient.prototype = {
 	/**
 	 * Sends a POST request to the [Confluence REST API]{@link https://docs.atlassian.com/ConfluenceServer/rest/latest/#api/content-createContent} for creating a new Confluence page. 
 	 * 
-	 * @throws {Error} If parameter `objPage` does not represent a valid {@link ConfluencePage} object.
-	 * @throws {Error} If parameter `objPage` does not represent a {@link ConfluencePage} having all values that are mandatory for new Confluence pages.
+	 * @throws {Error} If passed parameter `objPage` does not represent a valid {@link ConfluencePage} object.
+	 * @throws {Error} If passed parameter `objPage` does not represent a {@link ConfluencePage} having all values that are mandatory for new Confluence pages.
 	 * @param {ConfluencePage} objPage A reference to a valid {@link ConfluencePage} object.
 	 * @returns {Boolean} `true` if operation was successful otherwise `false`.
 	 */	
@@ -513,6 +528,10 @@ ConfluenceClient.prototype = {
 				objPage.setStatus("current");
 				objPage.setVersionNumber(objReturnedPage.getVersionNumber());
 
+				if (objPage.getLabels()) {
+					this.addPageLabels(objPage, objPage.getLabels());
+				}
+				
 				return true;
 			}
 		}
@@ -524,12 +543,136 @@ ConfluenceClient.prototype = {
 	},
 	
 	/**
+	 * Adds a list of labels to an existing page.
+	 * 
+	 * @param {ConfluencePage} objPage A reference to a valid {@link ConfluencePage} object.
+	 * @param {Array<String>} arrLabelNames List of label names.
+	 * @throws {Error} If passed parameter `objPage` does not represent a valid {@link ConfluencePage} object.
+	 * @throws {Error} If one of the passed label names is not valid.
+	 * @throws {Error} If passed parameter `objPage` does not have a page ID stored.
+	 * @returns {Boolean} `true` if operation was successful otherwise `false`.
+	 */
+	addPageLabels: function(objPage, arrLabelNames) {
+		if (!this._isValidPageObj(objPage)) {
+			throw new Error(
+				"[ConfluenceClient.addPageLabels] Please pass a valid {ConfluencePage} object at parameter {objPage}!"
+			);			
+		}
+
+		if (!objPage.getId()) {
+			throw new Error(
+				"[ConfluenceClient.addPageLabels] {objPage} has no page ID stored!"
+			);			
+		}
+
+		if (!Array.isArray(arrLabelNames)) {
+			throw new Error(
+				"[ConfluenceClient.addPageLabels] Please pass an Array at parameter {arrLabelNames}!"
+			);					
+		}
+
+		if (arrLabelNames.length == 0) {
+			this._logWarning("[ConfluenceClient.addPageLabels] parameter {arrLabelNames} is an empty Array!");
+
+			return false;
+		}
+
+		var arrLabelObjects = [];
+
+		//prepare the JSON payload for the PUT request
+		for (var numLabelCounter1 = 0; numLabelCounter1 < arrLabelNames.length; numLabelCounter1++) {
+			if (!ConfluenceClient.isValidLabelName(arrLabelNames[numLabelCounter1])) {
+				throw new Error(
+					"[ConfluenceClient.addPageLabels] '" + arrLabelNames[numLabelCounter1] + "' is not a valid label name!"
+				);					
+			}
+
+			arrLabelObjects.push({prefix: "global", name: arrLabelNames[numLabelCounter1]});
+		}
+
+		try {
+			//configure request
+			this._setEndpoint("/rest/api/content/" + objPage.getId() + "/label");
+			this._setHttpMethod("post");
+			this._setRequestBody(JSON.stringify(arrLabelObjects));
+
+			//send request
+			var objResponse = this._executeRequest("ConfluenceClient.addPageLabels");
+
+			if (objResponse.getStatusCode() == 200) {
+				for (var numLabelCounter2 = 0; numLabelCounter2 < arrLabelNames.length; numLabelCounter2++) {
+					objPage.addLabel(arrLabelNames[numLabelCounter2]);
+				}
+
+				return true;
+			}
+		}
+		catch (e) {
+			this._logCaughtError("ConfluenceClient.addPageLabels", e);
+		}
+
+		return false;
+	},
+
+	/**
+	 * removes a page label from an existing page.
+	 * 
+	 * @param {ConfluencePage} objPage A reference to a valid {@link ConfluencePage} object.
+	 * @param {String} strLabelName Name of label to be removed.
+	 * @throws {Error} If passed parameter `objPage` does not represent a valid {@link ConfluencePage} object.
+	 * @throws {Error} If passed parameter `strLabelName` does not represent a valid label name.
+	 * @throws {Error} If passed parameter `objPage` does not have a page ID stored.
+	 * @returns {Boolean} `true` if operation was successful otherwise `false`.
+	 */
+	removePageLabel: function(objPage, strLabelName) {
+		if (!ConfluenceClient.isValidLabelName(strLabelName)) {
+			throw new Error(
+				"[ConfluenceClient.removePageLabel] Please pass a valid label name at parameter {strLabelName}!" +
+				" Invalid value: " + strLabelName
+			);					
+		}
+
+		if (!this._isValidPageObj(objPage)) {
+			throw new Error(
+				"[ConfluenceClient.removePageLabel] Please pass a valid {ConfluencePage} object at parameter {objPage}!"
+			);			
+		}
+
+		if (!objPage.getId()) {
+			throw new Error(
+				"[ConfluenceClient.removePageLabel] {objPage} has no page ID stored!"
+			);			
+		}
+
+		try {
+			//configure request
+			this._setEndpoint("/rest/api/content/" + objPage.getId() + "/label?name=" + encodeURIComponent(strLabelName));
+			this._setHttpMethod("delete");
+			this._setRequestBody("x");
+
+			//send request
+			var objResponse = this._executeRequest("ConfluenceClient.removePageLabel");
+
+			if (objResponse.getStatusCode() == 204) {
+				objPage.removeLabel(strLabelName);
+
+				return true;
+			}
+		}
+		catch (e) {
+			this._logCaughtError("ConfluenceClient.removePageLabel", e);
+		}
+
+		return false;
+	},
+
+	/**
 	 * Sends GET and DELETE requests to the [Confluence REST API]{@link https://docs.atlassian.com/ConfluenceServer/rest/latest/#api/content/id/label}
 	 * to create the same list of page labels on the server side as the {@link ConfluencePage} object has.
 	 * 
 	 * @param {ConfluencePage} objPage A reference to a valid {@link ConfluencePage} object.
-	 * @throws {Error} If parameter `objPage` does not represent a valid {@link ConfluencePage} object.
-	 * @throws {Error} If parameter `objPage` does not have a page ID stored.
+	 * @throws {Error} If passed parameter `objPage` does not represent a valid {@link ConfluencePage} object.
+	 * @throws {Error} If passed parameter `objPage` does not have a page ID stored.
 	 * @returns {Boolean} `true` if operation was successful otherwise `false`.
 	 */
 	updatePageLabels: function(objPage) {
@@ -545,16 +688,13 @@ ConfluenceClient.prototype = {
 			);			
 		}
 
-
 		try {
-			var objResponse;
-
-			//configure request
+			//configure request for getting all page labes
 			this._setEndpoint("/rest/api/content/" + objPage.getId() + "/label");
 			this._setHttpMethod("get");
 			
 			//send request
-			objResponse = this._executeRequest("ConfluenceClient.updatePageLabels");
+			var objResponse = this._executeRequest("ConfluenceClient.updatePageLabels");
 			
 			//test whether response is successful
 			if (objResponse.getStatusCode() != 200) {
@@ -565,63 +705,46 @@ ConfluenceClient.prototype = {
 			var intSize         = objResult.size || 0;
 			var arrRemoteLabels = intSize > 0 ? objResult.results : [];
 			var arrLocalLabels  = objPage.getLabels() || [];
-			var result          = true;
+			var result1         = true;
+			var result2         = true;
 
 			for (var a = 0; a < arrRemoteLabels.length; a++) {
 				var existsLocally = false;
 
+				//test whether remote label exists locally
 				for (var b = 0; b < arrLocalLabels.length; b++) {
-					if (arrRemoteLabels[a].prefix == arrLocalLabels[b].prefix &&
-						arrRemoteLabels[a].name == arrLocalLabels[b].name) {
-							existsLocally = true;
+					if (arrRemoteLabels[a].name == arrLocalLabels[b]) {
+						existsLocally = true;
 					}
 				}
 
-				//if label does not exists locally it has to be removed on the service side
+				//if label does not exists locally it has to be removed on the server side
 				if (!existsLocally) {
-					//configure request
-					this._setEndpoint(
-						"/rest/api/content/" + objPage.getId() + "/label" + 
-						"?name=" + encodeURIComponent(arrRemoteLabels[a].name)
-					);
-					this._setHttpMethod("delete");
-					this._setRequestBody("x");
-
-					//send request
-					objResponse = this._executeRequest("ConfluenceClient.updatePageLabels");
-
-					if (objResponse.getStatusCode() != 204) {
-						result = false;
+					if (!this.removePageLabel(objPage, arrRemoteLabels[a].name)) {
+						result1 = false;
 					}
 				}			
 			}
 
+			//test whether local label exists on the server side
 			for (var c = 0; c < arrLocalLabels.length; c++) {
-				var updateLabels = false;
+				var existsRemote = false;
 
 				for (var d = 0; d < arrRemoteLabels.length; d++) {
-					if (arrLocalLabels[c].prefix == arrRemoteLabels[d].prefix &&
-						arrLocalLabels[c].name == arrRemoteLabels[d].name) {
-						updateLabels = true;
+					if (arrLocalLabels[c] == arrRemoteLabels[d].name) {
+						existsRemote = true;
 					}
 				}
 
-				if (!updateLabels) {
-					//configure request
-					this._setEndpoint("/rest/api/content/" + objPage.getId() + "/label");
-					this._setHttpMethod("post");
-					this._setRequestBody(JSON.stringify(arrLocalLabels[c]));
-
-					//send request
-					objResponse = this._executeRequest("ConfluenceClient.updatePageLabels");
-
-					if (objResponse.getStatusCode() != 200) {
-						result = false;
+				//if label does not exists on server side it has to be created there
+				if (!existsRemote) {
+					if (!this.addPageLabels(objPage, [arrLocalLabels[c]])) {
+						result2 = false;
 					}
 				}
 			}
 
-			return result;
+			return result1 && result2;
 		}
 		catch (e) {
 			this._logCaughtError("ConfluenceClient.updatePageLabels", e);
@@ -633,9 +756,9 @@ ConfluenceClient.prototype = {
 	 * Deletes a Confluence page by moving to the recycle bin of the corresponding space.
 	 * 
 	 * @param {ConfluencePage} objPage A reference to a valid {@link ConfluencePage} object.
-	 * @throws {Error} If parameter `objPage` does not represent a valid {@link ConfluencePage} object.
-	 * @throws {Error} If parameter `objPage` does not have a page ID stored.
-	 * @throws {Error} If given {@link ConfluencePage} object has status 'trashed'.
+	 * @throws {Error} If passed parameter `objPage` does not represent a valid {@link ConfluencePage} object.
+	 * @throws {Error} If passed parameter `objPage` does not have a page ID stored.
+	 * @throws {Error} If passed paremeter `objPage` has status 'trashed'.
 	 * @returns {Booelan} `true` if page could be moved to the recycle bin or `false`if not.
 	 */
 	removePage: function(objPage) {
@@ -738,10 +861,10 @@ ConfluenceClient.prototype = {
 		if (this._logDebugMessages) {
 			this._logDebug(
 				"[" + strMethodName + "] Send HTTP request with\n" +
-				"#Method = '" + this._httpMethod + "'\n" +
-				"#Endpoint = '" + this._objRestMessage.getEndpoint() + "'\n" +
-				"#Request headers = " + JSON.stringify(this._objRestMessage.getRequestHeaders()) + "\n" +
-				"#Request body = " + this._objRestMessage.getRequestBody()
+				"> Method = '" + this._httpMethod + "'\n" +
+				"> Endpoint = '" + this._objRestMessage.getEndpoint() + "'\n" +
+				"> Request headers = " + JSON.stringify(this._objRestMessage.getRequestHeaders()) + "\n" +
+				"> Request body = " + this._objRestMessage.getRequestBody()
 			);
 		}
 	},
@@ -750,19 +873,19 @@ ConfluenceClient.prototype = {
 		if (this._objResponse.haveError()) {
 			this._logError(
 				"[" + strMethodName + "] Requesting '" + this._endpoint + "' returned an error response with\n" +
-				"#Status code = '" + this._objResponse.getStatusCode() + "'\n" +
-				"#Error code = '" + this._objResponse.getErrorCode() + "'\n" +
-				"#Error message = '" + this._objResponse.getErrorMessage() + "'\n"  +
-				"#Response headers = " + JSON.stringify(this._objResponse.getHeaders()) + "\n" +
-				"#Response body = '" + this._objResponse.getBody() + "'"
+				"> Status code = '" + this._objResponse.getStatusCode() + "'\n" +
+				"> Error code = '" + this._objResponse.getErrorCode() + "'\n" +
+				"> Error message = '" + this._objResponse.getErrorMessage() + "'\n"  +
+				"> Response headers = " + JSON.stringify(this._objResponse.getHeaders()) + "\n" +
+				"> Response body = '" + this._objResponse.getBody() + "'"
 			);
 		}
 		else {
 			this._logDebug(
 				"[" + strMethodName + "] Requesting '" + this._endpoint + "' with HTTP-Method '" + this._httpMethod + "' returned a response with\n" +
-				"#Status code = '" + this._objResponse.getStatusCode() + "'\n" +
-				"#Response headers = " + JSON.stringify(this._objResponse.getHeaders()) + "\n" +
-				"#Response body = " + this._objResponse.getBody()
+				"> Status code = '" + this._objResponse.getStatusCode() + "'\n" +
+				"> Response headers = " + JSON.stringify(this._objResponse.getHeaders()) + "\n" +
+				"> Response body = " + this._objResponse.getBody()
 			);
 		}
 	},
@@ -771,6 +894,10 @@ ConfluenceClient.prototype = {
 		if (this._logDebugMessages == true) {
 			gs.info(strMessage);
 		}
+	},
+
+	_logWarning: function(strMessage) {
+		gs.warn(strMessage);
 	},
 
 	_logError: function(strMessage) {
@@ -816,7 +943,7 @@ ConfluenceClient.isValidInteger = function(param) {
  * @returns {Boolean} `true` if passed value represents a valid Label name, otherwise `false`.
  */
 ConfluenceClient.isValidLabelName = function(param) {
-	return /^[0-9a-zA-Z_-~{}%+]{1,}$/.test(param.toString());
+	return /^[0-9a-zA-Z_\-~{}%+]{1,}$/.test(param.toString());
 };
 
 /**
@@ -826,7 +953,7 @@ ConfluenceClient.isValidLabelName = function(param) {
  * @returns {Boolean} `true` if passed value represents a valid Confluence space key, otherwise `false`.
  */
 ConfluenceClient.isValidSpaceKey = function(param) {
-	return /^(~)?[0-9a-z]{3,255}$/.test(param.toString());
+	return /^(~)?[0-9a-z-]{3,255}$/.test(param.toString());
 };
 
 
@@ -835,9 +962,9 @@ ConfluenceClient.isValidSpaceKey = function(param) {
  * 
  * @class ConfluencePage
  * @param {ConfluenceClient} refConfluenceClient Reference to an {@link ConfluenceClient} object.
- * @param {Object} jsonPage Response of a REST API call.
- * @throws {Error} If parameter `refConfluenceClient` does not points to a valid object of type {@link ConfluenceClient}
- * @throws {Error} If parameter `jsonPage` does not represent a valid JSON object.
+ * @param {Object} [jsonPage] Response of a REST API call.
+ * @throws {Error} If passed parameter `refConfluenceClient` does not points to a valid object of type {@link ConfluenceClient}
+ * @throws {Error} If passed parameter `jsonPage` does not represent a valid JSON object.
  */
 ConfluencePage.prototype = {
 	initialize: function(refConfluenceClient, jsonPage) {
@@ -845,59 +972,74 @@ ConfluencePage.prototype = {
 			throw new Error(
 				"[ConfluencePage.initialize] Please pass a reference to a valid {ConfluenceClient} object at parameter {refConfluenceClient}!"
 			);
-
-		}
-		if (!(typeof jsonPage === "object")) {
-			throw new Error(
-				"[ConfluencePage.initialize] Please pass a valid JSON object at parameter {jsonPage}!"
-			);
-
 		}
 
-		this._refConfluenceClient       = refConfluenceClient;
-		this._strInternalId             = refConfluenceClient._strInternalId.toString();
-		this._intId                     = jsonPage.id;
-		this._strStatus                 = jsonPage.status;
-		this._strTitle                  = jsonPage.title;
-		this._hasTitleChanged           = false;
-		this._strSpaceKey               = jsonPage.space.key;
-		this._hasSpaceKeyChanged        = false;
-		this._intVersionNumber          = jsonPage.version.number;
-		this._strBody                   = jsonPage.body.storage.value;
-		this._hasBodyChanged            = false;
-		this._renderedHTML              = jsonPage.body.styled_view.value;
-		this._arrLabels                 = jsonPage.metadata.labels.results;
-		this._haveLabelsChanged         = false;
-		this._userReadingRestrictions   = jsonPage.restrictions.read.restrictions.user.results;
-		this._groupReadingRestrictions  = jsonPage.restrictions.read.restrictions.group.results;
-		this._userUpdatingRestrictions  = jsonPage.restrictions.update.restrictions.user.results;
-		this._groupUpdatingRestrictions = jsonPage.restrictions.update.restrictions.group.results;
+		this._refConfluenceClient = refConfluenceClient;
+		this._strInternalId       = refConfluenceClient._strInternalId.toString();
 
-		if (jsonPage.history.lastUpdated.by) {
-			this._strModifierUserName    = jsonPage.history.lastUpdated.by.username;
-			this._strModifierDisplayName = jsonPage.history.lastUpdated.by.displayName;
-		}
-
-		if (jsonPage.history.lastUpdated.when) {
-			var gdtModification = new GlideDateTime();
-
-			gdtModification.setDisplayValue(jsonPage.history.lastUpdated.when, "yyyy-MM-dd'T'HH:mm:ss");
-			
-			this._gdtModification = gdtModification;
-		}
-
-		if (Array.isArray(jsonPage.ancestors) && jsonPage.ancestors.length > 0) {
-			this.setParentPageId(jsonPage.ancestors[jsonPage.ancestors.length - 1].id);
-
-			this._hasParentPageIdChanged = false;
-			this._arrAncestors           = [];
-
-			for (var i = 0; i < jsonPage.ancestors.length; i++) {
-				this._arrAncestors.push(
-					new ConfluencePage(refConfluenceClient, jsonPage.ancestors[i])
+		if (jsonPage) {
+			if (!(typeof jsonPage === "object")) {		
+				throw new Error(
+					"[ConfluencePage.initialize] Please pass a valid JSON object at parameter {jsonPage}!"
 				);
 			}
+
+			this._strId                     = jsonPage.id;
+			this._strStatus                 = jsonPage.status;
+			this._strTitle                  = jsonPage.title;
+			this._strSpaceKey               = jsonPage.space.key;
+			this._intVersionNumber          = jsonPage.version.number;
+			this._strBody                   = jsonPage.body.storage.value;
+			this._renderedHTML              = jsonPage.body.styled_view.value;
+			this._userReadingRestrictions   = jsonPage.restrictions.read.restrictions.user.results;
+			this._groupReadingRestrictions  = jsonPage.restrictions.read.restrictions.group.results;
+			this._userUpdatingRestrictions  = jsonPage.restrictions.update.restrictions.user.results;
+			this._groupUpdatingRestrictions = jsonPage.restrictions.update.restrictions.group.results;
+
+			if (jsonPage.history.lastUpdated.by) {
+				this._strModifierUserName    = jsonPage.history.lastUpdated.by.username;
+				this._strModifierDisplayName = jsonPage.history.lastUpdated.by.displayName;
+			}
+
+			if (jsonPage.history.lastUpdated.when) {
+				var gdtModification = new GlideDateTime();
+
+				gdtModification.setDisplayValue(jsonPage.history.lastUpdated.when, "yyyy-MM-dd'T'HH:mm:ss");
+				
+				this._gdtModification = gdtModification;
+			}
+
+			if (Array.isArray(jsonPage.metadata.labels.results) && jsonPage.metadata.labels.results.length > 0) {
+				this._arrLabels = [];
+
+				for (var numLabelCounter = 0; numLabelCounter < jsonPage.metadata.labels.results.length; numLabelCounter++) {
+					this._arrLabels.push(jsonPage.metadata.labels.results[numLabelCounter].name);
+				}
+			}
+
+			if (Array.isArray(jsonPage.ancestors) && jsonPage.ancestors.length > 0) {
+				this.setParentPageId(jsonPage.ancestors[jsonPage.ancestors.length - 1].id);
+
+				this._arrAncestors = [];
+
+				for (var numAncestorCounter = 0; numAncestorCounter < jsonPage.ancestors.length; numAncestorCounter++) {
+					this._arrAncestors.push(
+						new ConfluencePage(refConfluenceClient, jsonPage.ancestors[numAncestorCounter])
+					);
+				}
+			}
+
+			this._hasTitleChanged           = false;
+			this._hasSpaceKeyChanged        = false;
+			this._hasBodyChanged            = false;
+			this._hasScaffoldingDataChanged = false;
+			this._hasParentPageIdChanged    = false;
+			this._haveLabelsChanged         = false;
 		}
+	},
+
+	getConfluenceClient: function() {
+		return this._refConfluenceClient;
 	},
 
 	/**
@@ -913,12 +1055,13 @@ ConfluencePage.prototype = {
 	 * Setter for the Confluence page status.
 	 * 
 	 * @param {String} strStatus Status of the Confluence page. Only allowed values are `current` and `trashed`.
-	 * @throws {Error} If value at parameter `strStatus`is not a String or different from the allowed values.
+	 * @throws {Error} If passed parameter `strStatus` is not a String or different from the allowed values.
 	 */
 	setStatus: function(strStatus) {
 		if (!(typeof strStatus === "string" && (strStatus === 'current' || strStatus === 'trashed'))) {
 			throw new Error(
-				"[ConfluencePage.setStatus] Please pass a valid page status at parameter {strStatus}!"
+				"[ConfluencePage.setStatus] Please pass a valid page status at parameter {strStatus}!" +
+				" Invalid value: " + strStatus
 			);					
 		}
 
@@ -928,31 +1071,32 @@ ConfluencePage.prototype = {
 	/**
 	 * Getter for the Confluence page ID.
 	 * 
-	 * @returns {Integer} ID of the Confluence page if available or `undefined` if not.
+	 * @returns {String} ID of the Confluence page if available or `undefined` if not.
 	 */
 	getId: function() {
-		return this._intId;
+		return this._strId;
 	},
 	
 	/**
 	 * Setter for the Confluence page ID.
 	 * 
-	 * @param {Integer} intId A valid Confluence page ID.
-	 * @throws {Error} If passed `intId` is not a valid Confluence page ID.
+	 * @param {Integer} strPageId A valid Confluence page ID.
+	 * @throws {Error} If passed parameter `strPageId` is not a valid Confluence page ID.
  	 * @throws {Error} If once set page ID should be changed.
 	 */
-	setId: function(intId) {
-		if (!ConfluenceClient.isValidInteger(intId)) {
+	setId: function(strPageId) {
+		if (!ConfluenceClient.isValidInteger(strPageId)) {
 			throw new Error(
-				"[ConfluencePage.setId] Please pass a valid Confluence page ID at parameter {intId}!"
+				"[ConfluencePage.setId] Please pass a valid Confluence page ID at parameter {strPageId}!" +
+				" Invalid value: " + strPageId
 			);					
 		}
 
-		if (this._intId && this._intId != intId) {
+		if (this._strId && this._strId != strPageId) {
 			throw new Error("[ConfluencePage.setId] It is not allowed to change the page ID!");
 		}
 
-		this._intId = intId;
+		this._strId = strPageId;
 	},
 
 	/**
@@ -967,18 +1111,19 @@ ConfluencePage.prototype = {
 	/**
 	 * Setter for the Confluence page title.
 	 * 
-	 * @param {String} strTitle  The new title of the Confluence page.
-	 * @throws {Error} If `strTitle` is empty or not of type `String`.
+	 * @param {String} strPageTitle  The new title of the Confluence page.
+	 * @throws {Error} If passed parameter `strPageTitle` is empty or not of type `String`.
 	 */
-	setTitle: function(strTitle) {				
-		if (!(typeof strTitle === "string" && strTitle.length > 0)) {
+	setTitle: function(strPageTitle) {				
+		if (!(typeof strPageTitle === "string" && strPageTitle.length > 0)) {
 			throw new Error(
-				"[ConfluencePage.setTitle] Please pass a valid page title at parameter {strTitle}!"
+				"[ConfluencePage.setTitle] Please pass a valid page title at parameter {strTitle}!" +
+				" Invalid value: " + strPageTitle
 			);					
 		}
 		
-		this._hasTitleChanged = this._strTitle !== strTitle;
-		this._strTitle        = strTitle;
+		this._hasTitleChanged = this._strTitle !== strPageTitle;
+		this._strTitle        = strPageTitle;
 	},
 	
 	/**
@@ -994,12 +1139,13 @@ ConfluencePage.prototype = {
 	 * Setter for the (new) space key the Confluence page should be located in.
 	 * 
 	 * @param {String} strSpaceKey Key of the (new) space.
-	 * @throws {Error} If `strSpaceKey` is not a valid Confluence space key.
+	 * @throws {Error} If passed parameter `strSpaceKey` is not a valid Confluence space key.
 	 */
 	setSpaceKey: function(strSpaceKey) {
 		if (!ConfluenceClient.isValidSpaceKey(strSpaceKey)) {
 			throw new Error(
-				"[ConfluencePage.setSpaceKey] Please pass a valid space key at parameter {strSpaceKey}!"
+				"[ConfluencePage.setSpaceKey] Please pass a valid space key at parameter {strSpaceKey}!" +
+				" Invalid value: " + strSpaceKey
 			);					
 		}
 
@@ -1020,12 +1166,13 @@ ConfluencePage.prototype = {
 	 * Setter for the version number of a Confluence page.
 	 * 
 	 * @param {Integer} intVersionNumber Version number of the current page version.
-	 * @throws {Error} If passed `intVersionNumber` is not a valid `Integer` value.
+	 * @throws {Error} If passed parameter `intVersionNumber` is not a valid `Integer` value.
 	 */
 	setVersionNumber: function(intVersionNumber) {
 		if (!ConfluenceClient.isValidInteger(intVersionNumber)) {
 			throw new Error(
-				"[ConfluencePage.setVersionNumber] Please pass a valid integer value at parameter {intVersionNumber}!"
+				"[ConfluencePage.setVersionNumber] Please pass a valid integer value at parameter {intVersionNumber}!" +
+				" Invalid value: " + intVersionNumber
 			);					
 		}
 
@@ -1056,18 +1203,18 @@ ConfluencePage.prototype = {
 	/**
 	 * Setter for the content of a Confluence page.
 	 * 
-	 * @param {String} strBody Page content as storage format.
-	 * @throws {Error} If passed `strBody` is not of type `String`.
+	 * @param {String} strPageBody Page content as storage format.
+	 * @throws {Error} If passed parameter `strPageBody` is not of type `String`.
 	 */
-	setBody: function(strBody) {
-		if (!(typeof strBody === "string")) {
+	setBody: function(strPageBody) {
+		if (!(typeof strPageBody === "string")) {
 			throw new Error(
-				"[ConfluencePage.setBody] Please pass a valid body content at parameter {strBody}!"
+				"[ConfluencePage.setBody] Please pass a valid body content at parameter {strPageBody}!"
 			);					
 		}
 
-		this._hasBodyChanged = this._strBody !== strBody;
-		this._strBody        = strBody;
+		this._hasBodyChanged = this._strBody !== strPageBody;
+		this._strBody        = strPageBody;
 	},
 	
 	/**
@@ -1093,7 +1240,7 @@ ConfluencePage.prototype = {
 	 * 
 	 * @param {Array<String>} [strAllowedFields] Optional list of field names that should remain at result array.
 	 * @returns {Boolean} `true` if loading of Scaffolding data was successful otherwise `false`.
-	 * @throws {Error} If page object has no page ID stored.
+	 * @throws {Error} If underlying page object has no page ID stored.
 	 */
 	loadScaffoldingData: function(strAllowedFields) {
 		if (!this.getId()) {
@@ -1119,14 +1266,14 @@ ConfluencePage.prototype = {
 	 * @returns {Array<Object>} Array with all Scaffolding data if defined or `undefined`if not.
 	 */
 	getScaffoldingData: function() {
-		return this._scaffoldingData;
+		return this._arrScaffoldingData;
 	},
 	
 	/**
 	 * Setter for the Scaffolding data.
 	 * 
-	 * @param {Array} arrScaffoldingData Array with the scaffolding data
-	 * @throws {Error} If passed `arrScaffoldingData` is not of type `Array`.
+	 * @param {Array<Object>} arrScaffoldingData Array with the scaffolding data
+	 * @throws {Error} If passed parameter `arrScaffoldingData` is not of type `Array`.
 	 */
 	setScaffoldingData: function(arrScaffoldingData) {
 		if (!Array.isArray(arrScaffoldingData)) {
@@ -1135,7 +1282,8 @@ ConfluencePage.prototype = {
 			);					
 		}
 
-		this._scaffoldingData = arrScaffoldingData;
+		this._arrScaffoldingData        = arrScaffoldingData;
+		this._hasScaffoldingDataChanged = true;
 	},
 	
 	/**
@@ -1143,19 +1291,20 @@ ConfluencePage.prototype = {
 	 * 
 	 * @param {String} strFieldName Name of the scaffolding field whoose value should be returned.
 	 * @returns {Object} Value of requested scaffolding field if defined or `undefined` if not.
-	 * @throws {Error} If passed `strFieldName` is not a valid `String` value.
+	 * @throws {Error} If passed parameter `strFieldName` is not a valid `String` value.
 	 */
 	getScaffoldingValue: function(strFieldName) {
 		if (!(typeof strFieldName === "string" && strFieldName.length > 0)) {
 			throw new Error(
-				"[ConfluencePage.getScaffoldingValue] Please pass a valid field name id at parameter {strFieldName}!"
+				"[ConfluencePage.getScaffoldingValue] Please pass a valid field name at parameter {strFieldName}!" +
+				" Invalid value: " + strFieldName
 			);					
 		}
 		
-		if (this._scaffoldingData) {
-			for (var i = 0; i < this._scaffoldingData.length; i++) { 
-				if (this._scaffoldingData[i].name === strFieldName) {
-					return this._scaffoldingData[i].value;
+		if (this._arrScaffoldingData) {
+			for (var i = 0; i < this._arrScaffoldingData.length; i++) { 
+				if (this._arrScaffoldingData[i].name === strFieldName) {
+					return this._arrScaffoldingData[i].value;
 				}					
 			}
 		}
@@ -1168,31 +1317,35 @@ ConfluencePage.prototype = {
 	 * 
 	 * @param {String} strFieldName Name of the scaffolding field whoose value should be set.
 	 * @param {*} objFieldValue New value for the specified scaffolding field.
-	 * @throws {Error} If passed `strFieldName` is not a valid `String` value.
+	 * @throws {Error} If passed parameter `strFieldName` is not a valid `String` value.
 	 */
 	setScaffoldingValue: function(strFieldName, objFieldValue) {		
 		if (!(typeof strFieldName === "string" && strFieldName.length > 0)) {
 			throw new Error(
-				"[ConfluencePage.setScaffoldingValue] Please pass a valid field name at parameter {strFieldName}!"
+				"[ConfluencePage.setScaffoldingValue] Please pass a valid field name at parameter {strFieldName}!" + 
+				" Invalid value: " + strFieldName
 			);					
 		}
 	
-		if (this._scaffoldingData) {
+		if (this._arrScaffoldingData) {
 			//try to find the field by its name
-			for (var i = 0; i < this._scaffoldingData.length; i++) {
-				if (this._scaffoldingData[i].name == strFieldName) {
-					this._scaffoldingData[i].value = objFieldValue || "";
+			for (var i = 0; i < this._arrScaffoldingData.length; i++) {
+				if (this._arrScaffoldingData[i].name == strFieldName) {
+					this._arrScaffoldingData[i].value  = objFieldValue || "";
+					this._hasScaffoldingDataChanged = true;
 
 					return;
 				}
 			}
 		}
 		else {
-			this._scaffoldingData = [];
+			this._arrScaffoldingData = [];
 		}
 
 		//no proper field found, add a new one 
-		this._scaffoldingData.push({name: strFieldName, value: objFieldValue || ""});
+		this._arrScaffoldingData.push({name: strFieldName, value: objFieldValue || ""});
+
+		this._hasScaffoldingDataChanged = true;
 	},
 	
 	/**
@@ -1207,18 +1360,19 @@ ConfluencePage.prototype = {
 	/**
 	 * Setter for the parent page ID.
 	 * 
-	 * @param {Integer} intParentPageId Id of the new parent page.
-	 * @throws {Error} If passed `intParentPageId` is not a valid `Integer` value.
+	 * @param {Integer} strParentPageId Id of the new parent page.
+	 * @throws {Error} If passed parameter `strParentPageId` is not a valid `Integer` value.
 	 */
-	setParentPageId: function(intParentPageId) {
-		if (!ConfluenceClient.isValidInteger(intParentPageId)) {
+	setParentPageId: function(strParentPageId) {
+		if (!ConfluenceClient.isValidInteger(strParentPageId)) {
 			throw new Error(
-				"[ConfluencePage.setParentPageId] Please pass a valid page ID at parameter {intParentPageId}!"
+				"[ConfluencePage.setParentPageId] Please pass a valid page ID at parameter {strParentPageId}!" +
+				" Invalid value: " + strParentPageId
 			);					
 		}
 
-		this._hasParentPageIdChanged = this._intParentPageId !== intParentPageId;
-		this._intParentPageId        = intParentPageId;
+		this._hasParentPageIdChanged = this._strParentPageId !== strParentPageId;
+		this._strParentPageId        = strParentPageId;
 	},
 	
 	/**
@@ -1227,7 +1381,7 @@ ConfluencePage.prototype = {
 	 * @returns {Integer} Id of the parent page if defined or `undefined` if not.
 	 */
 	getParentPageId: function() {
-		return this._intParentPageId;
+		return this._strParentPageId;
 	},
 
 	/**
@@ -1267,25 +1421,26 @@ ConfluencePage.prototype = {
 	},
 
 	/**
-	 * Tests whether this {@link ConfluencePage} object has a label named by given `strName`.
+	 * Tests whether this {@link ConfluencePage} object has a label named by given `strLabelName`.
 	 * 
-	 * @param {String} strName Label name to test.
+	 * @param {String} strLabelName Label name to test.
 	 * @returns {Boolean} `True` if label with given name exists or `false`if not.
-	 * @throws {Error} If passed `strName` does not represent a valid label name.
+	 * @throws {Error} If passed parameter `strLabelName` does not represent a valid label name.
 	 */
-	hasLabel: function(strName) {
-		if (!ConfluenceClient.isValidLabelName(strName)) {
+	hasLabel: function(strLabelName) {
+		if (!ConfluenceClient.isValidLabelName(strLabelName)) {
 			throw new Error(
-				"[ConfluencePage.hasLabel] Please pass a valid label name at parameter {strName}!"
+				"[ConfluencePage.hasLabel] Please pass a valid label name at parameter {strLabelName}!" +
+				" Invalid value: " + strLabelName
 			);					
 		}
 		
 		if (this._arrLabels) {
-			var _strName = strName.toLowerCase();
+			var _strLabelName = strLabelName.toLowerCase().trim();
 
 			//tests whether label name exists
 			for (var i = 0; i < this._arrLabels.length; i++) {
-				if (this._arrLabels[i].name == _strName) {
+				if (this._arrLabels[i] === _strLabelName) {
 					return true;
 				}
 			}
@@ -1293,26 +1448,27 @@ ConfluencePage.prototype = {
 
 		return false;
 	},
-	
+
 	/**
 	 * Adds a single label to the internal list of page labels.
 	 * 
-	 * @param {String} strName label name
-	 * @throws {Error} If passed `strName` does not represent a valid label name.
+	 * @param {String} strLabelName Name of label to add.
+	 * @throws {Error} If passed parameter `strLabelName` does not represent a valid label name.
 	 */
-	addLabel: function(strName) {
-		if (!ConfluenceClient.isValidLabelName(strName)) {
+	addLabel: function(strLabelName) {
+		if (!ConfluenceClient.isValidLabelName(strLabelName)) {
 			throw new Error(
-				"[ConfluencePage.addLabel] Please pass a valid label name at parameter {strName}!"
+				"[ConfluencePage.addLabel] Please pass a valid label name at parameter {strLabelName}!" +
+				" Invalid value: " + strLabelName
 			);					
 		}
 		
-		var _strName = strName.toLowerCase().trim();
-		
+		var _strLabelName = strLabelName.toLowerCase().trim();
+
 		if (this._arrLabels) {
 			//tests whether label name already exists
 			for (var i = 0; i < this._arrLabels.length; i++) {
-				if (this._arrLabels[i].name === _strName) {
+				if (this._arrLabels[i] === _strLabelName) {
 					return;
 				}
 			}
@@ -1323,36 +1479,37 @@ ConfluencePage.prototype = {
 
 		this._haveLabelsChanged = true;
 
-		this._arrLabels.push({prefix: "global", name: _strName});
+		this._arrLabels.push(_strLabelName);
 	},
 
 	/**
 	 * Removes a label with given name from the internal list of page labels.
 	 * 
-	 * @param {String} strName Name of the label to be removed.
-	 * @throws {Error} If passed `strName` does not represent a valid label name.
+	 * @param {String} strLabelName Name of the label to be removed.
+	 * @throws {Error} If passed parameter `strLabelName` does not represent a valid label name.
 	 */
-	removeLabel: function(strName) {
-		if (!ConfluenceClient.isValidLabelName(strName)) {
+	removeLabel: function(strLabelName) {
+		if (!ConfluenceClient.isValidLabelName(strLabelName)) {
 			throw new Error(
-				"[ConfluencePage.addLabel] Please pass a valid label name at parameter {strName}!"
+				"[ConfluencePage.addLabel] Please pass a valid label name at parameter {strLabelName}!" +
+				" Invalid value: " + strLabelName
 			);					
 		}
 
 		if (this._arrLabels) {
-			var _strName      = strName.toLowerCase().trim();
-			var _arrTmpLabels = [];
+			var _strLabelName = strLabelName.toLowerCase().trim();
+			var _arrResult    = [];
 
 			for (var i = 0; i < this._arrLabels.length; i++) {
-				if (this._arrLabels[i].name === _strName) {
+				if (this._arrLabels[i] === _strLabelName) {
 					this._haveLabelsChanged = true;
 				}
 				else {
-					_arrTmpLabels.push(this._arrLabels[i]);
+					_arrResult.push(this._arrLabels[i]);
 				}
 			}
 
-			this._arrLabels = _arrTmpLabels;
+			this._arrLabels = _arrResult;
 		}
 	},
 
@@ -1393,48 +1550,33 @@ ConfluencePage.prototype = {
 	},
 
 	/**
-	 * Updates page data on the Confluence server by invoking method {@link ConfluenceClient#updatePagedata}.
+	 * Updates page data on the Confluence server by invoking method {@link ConfluenceClient#updatePageData}.
 	 * 
 	 * @param {Boolean} [suppressNotifications] If `true` no email notifications will be sent to watchers.
 	 * @returns {Boolean} `true` if operation was successful otherwise `false`.
 	 */
 	updatePageData: function(suppressNotifications) {
-		if (this._hasBodyChanged || this._hasParentPageIdChanged || this._hasSpaceKeyChanged || this._hasTitleChanged) {
-			return this._refConfluenceClient.updatePageData(this, suppressNotifications);
-		} 
-		else if (this._haveLabelsChanged) {
-			this._refConfluenceClient._logDebug(
-				"[ConfluencePage.updatePageData] At page with ID = '" + this._intId + "' only labels have changed. " + 
-				"Therefore just invoke method 'updatePageLabels()' ..."
-			);
-			
-			return this.updatePageLabels();
-		}
-
-		this._refConfluenceClient._logDebug(
-			"[ConfluencePage.updatePageData] At page with ID = '" + this._intId + "' nothing has changed. " + 
-			"Therefore no update requests will be sent to Confluence server!"
-		);
-
-		return false;
+		return this._hasBodyChanged || this._hasParentPageIdChanged || this._hasSpaceKeyChanged || this._hasTitleChanged ?
+				this._refConfluenceClient.updatePageData(this, suppressNotifications) :
+				true;
 	},
 
 	/**
-	 * Updates page data on the Confluence server by invoking method {@link ConfluenceClient#updatePageLabels}.
+	 * Updates page labels on the Confluence server by invoking method {@link ConfluenceClient#updatePageLabels}.
 	 * 
 	 * @returns {Boolean} `true` if operation was successful otherwise `false`.
 	 */
 	updatePageLabels: function() {
-		return this._refConfluenceClient.updatePageLabels(this);
+		return this._haveLabelsChanged ? this._refConfluenceClient.updatePageLabels(this) : true;
 	},
 
 	/**
-	 * Updates page data on the Confluence server by invoking method {@link ConfluenceClient#updateScaffoldingData}.
+	 * Updates scaffolding data on the Confluence server by invoking method {@link ConfluenceClient#updateScaffoldingData}.
 	 * 
 	 * @returns `true` if operation was successful otherwise `false`.
 	 */
 	updateScaffoldingData: function() {
-		return this._refConfluenceClient.updateScaffoldingData(this);
+		return this._hasScaffoldingDataChanged ? this._refConfluenceClient.updateScaffoldingData(this) : true;
 	},
 
 	/**
@@ -1444,6 +1586,15 @@ ConfluencePage.prototype = {
 	 */
 	create: function() {
 		return this._refConfluenceClient.createPage(this);
+	},
+
+	/**
+	 * Updates complete page data on the Confluence server by invoking appropriate update methods.
+	 * 
+	 * @param {Boolean} [suppressNotifications] If `true` no email notifications will be sent to watchers.
+	 * @returns {Boolean} `true` if operation was successful otherwise `false`.	 */
+	update: function(suppressNotifications) {
+		return this.updatePageData(suppressNotifications) && this.updatePageLabels() && this.updateScaffoldingData();
 	},
 
 	/**
@@ -1482,10 +1633,6 @@ ConfluencePage.prototype = {
 			objResult.body = {storage: {value: this.getBody(), representation: "storage"}};
 		}
 
-		if (this.getLabels()) {
-			objResult.metadata = {labels: this.getLabels()};
-		}
-
 		if (this.getParentPageId()) {
 			objResult.ancestors = [{id: this.getParentPageId()}];
 		}
@@ -1500,6 +1647,6 @@ ConfluencePage.prototype = {
 	 * @returns {Boolean} `True` in case this object is a valid {@link ConfluencePage} object.
 	 */
 	isValid: function() {
-		return this._strInternalId == this._refConfluenceClient._strInternalId;
+		return this._refConfluenceClient ? this._strInternalId == this._refConfluenceClient._strInternalId : false;
 	},
 };
